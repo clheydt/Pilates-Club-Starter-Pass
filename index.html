@@ -119,6 +119,7 @@
   }
   .hero-grid{
     display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;
+    min-width:0;
   }
   .hero-video-wrap{
     position:relative;z-index:2;flex-shrink:0;
@@ -130,7 +131,7 @@
     border:4px solid rgba(142,61,255,0.45);
     box-shadow:0 0 0 10px rgba(142,61,255,0.08), 0 30px 60px rgba(142,61,255,0.25);
   }
-  .hero-inner{max-width:640px;position:relative;z-index:2;}
+  .hero-inner{max-width:640px;position:relative;z-index:2;min-width:0;}
   .hero .eyebrow{margin-bottom:18px;display:block;}
   .hero h1{font-size:clamp(42px, 7vw, 82px);margin-bottom:18px;}
   .hero h1 .pre{
@@ -340,10 +341,12 @@
   .pricing-grid{
     position:relative;z-index:2;
     display:grid;grid-template-columns:1fr 1fr;align-items:stretch;
+    min-width:0;
   }
   .pricing-left{
     padding:72px 60px;text-align:left;
     display:flex;flex-direction:column;justify-content:center;
+    min-width:0;
   }
   .pricing-left .eyebrow{display:block;margin-bottom:16px;}
   .pricing-left h2{font-size:clamp(28px,4vw,44px);margin-bottom:20px;}
@@ -362,6 +365,7 @@
     border-left:1px solid rgba(255,255,255,0.08);
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     padding:60px 40px;text-align:center;
+    min-width:0;
   }
   .pricing-right .price-classes{
     font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--white);
@@ -390,6 +394,7 @@
   .credit-grid{
     position:relative;z-index:2;
     display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+    min-width:0;
   }
   .credit-copy-col{text-align:left;}
   .credit-copy-col .eyebrow{color:var(--white);opacity:0.85;display:block;margin-bottom:14px;}
@@ -540,6 +545,8 @@
     .flow-card{min-width:130px;padding:18px;}
     .pricing-left{padding:40px 24px;}
     .pricing-right{padding:40px 24px;}
+    .btn-lg{padding:18px 28px;font-size:14.5px;white-space:normal;text-align:center;}
+    .btn{white-space:normal;}
     .final-cta-card{padding:60px 24px;}
   }
   @media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
