@@ -118,20 +118,20 @@
     pointer-events:none;
   }
   .hero-grid{
-    display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;
+    display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:flex-start;
     min-width:0;
   }
   .hero-video-wrap{
     position:relative;z-index:2;flex-shrink:0;
   }
   .hero-video{
-    width:300px;height:300px;border-radius:50%;
+    width:260px;height:420px;border-radius:20px;
     object-fit:cover;
     display:block;
     border:4px solid rgba(142,61,255,0.45);
     box-shadow:0 0 0 10px rgba(142,61,255,0.08), 0 30px 60px rgba(142,61,255,0.25);
   }
-  .hero-inner{max-width:640px;position:relative;z-index:2;min-width:0;}
+  .hero-inner{max-width:none;position:relative;z-index:2;min-width:0;}
   .hero .eyebrow{margin-bottom:18px;display:block;}
   .hero h1{font-size:clamp(42px, 7vw, 82px);margin-bottom:18px;}
   .hero h1 .pre{
@@ -140,12 +140,13 @@
   .hero h1 .accent{
     background:linear-gradient(135deg, var(--purple-bright), var(--purple));
     -webkit-background-clip:text;background-clip:text;color:transparent;
+    white-space:nowrap;
   }
   .hero h2{
     font-family:'Montserrat', sans-serif;font-weight:600;text-transform:none;
     font-size:clamp(20px,2.6vw,28px);color:var(--white);margin-bottom:24px;letter-spacing:0;
   }
-  .hero p{font-size:17px;color:var(--white);max-width:560px;margin-bottom:14px;}
+  .hero p{font-size:17px;color:var(--white);max-width:none;margin-bottom:14px;}
   .hero p strong{color:var(--white);}
   .hero .ctas{display:flex;gap:18px;margin-top:32px;flex-wrap:wrap;}
 
@@ -503,7 +504,7 @@
     .hero-inner{text-align:center;}
     .hero-inner p{margin-left:auto;margin-right:auto;}
     .hero-inner .ctas{justify-content:center;}
-    .hero-video{width:220px;height:220px;}
+    .hero-video{width:180px;height:290px;}
     .benefits-grid,.testi-row{grid-template-columns:1fr 1fr;}
     .showcase-row .wrap{grid-template-columns:1fr;gap:36px;}
     .showcase-row.reverse .wrap{direction:ltr;}
@@ -534,7 +535,7 @@
   }
   @media(max-width:600px){
     .hero-logo{height:70px;}
-    .hero-video{width:170px;height:170px;}
+    .hero-video{width:100%;height:220px;border-radius:16px;}
     .benefits-grid,.testi-row{grid-template-columns:1fr;}
     .hero{padding:120px 0 70px;min-height:auto;}
     .section,.benefits-section,.final-cta{padding:80px 0;}
