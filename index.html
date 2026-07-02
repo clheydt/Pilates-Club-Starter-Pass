@@ -191,7 +191,7 @@
     background:linear-gradient(135deg, var(--white), var(--purple-bright));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .trust-stat .lbl{font-size:13px;color:var(--white);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:10px;}
+  .trust-stat .lbl{font-size:13px;color:var(--white);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:10px;white-space:nowrap;}
   .how-timeline{
     position:relative;
     display:flex;align-items:flex-start;justify-content:space-between;
@@ -552,6 +552,47 @@
     .final-cta-card{padding:60px 24px;}
   }
   @media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
+  /* ---------- Schedule accordion ---------- */
+  .sched-section{background:var(--light-bg);padding:0 0 80px;}
+  .sched-details{border-radius:16px;overflow:hidden;width:100%;}
+  .sched-summary{
+    list-style:none;display:flex;align-items:center;justify-content:space-between;
+    background:var(--white);
+    border:1.5px solid rgba(142,61,255,0.35);
+    border-radius:16px;
+    padding:22px 32px;
+    cursor:pointer;
+    transition:background .2s, border-color .2s, box-shadow .2s;
+    width:100%;
+  }
+  .sched-summary::-webkit-details-marker{display:none;}
+  .sched-summary::marker{display:none;}
+  .sched-details[open] .sched-summary{
+    border-bottom-left-radius:0;border-bottom-right-radius:0;
+    border-color:var(--purple);border-bottom-color:rgba(142,61,255,0.15);
+    background:rgba(142,61,255,0.03);
+  }
+  .sched-summary:hover{
+    background:rgba(142,61,255,0.04);border-color:var(--purple);
+    box-shadow:0 6px 20px rgba(142,61,255,0.1);
+  }
+  .sched-label{
+    font-family:'Montserrat',sans-serif;font-weight:800;font-size:17px;
+    color:var(--purple);text-transform:uppercase;letter-spacing:0.5px;
+  }
+  .sched-chevron{
+    width:26px;height:26px;flex-shrink:0;color:var(--purple);
+    transition:transform .3s ease;
+  }
+  .sched-chevron svg{width:26px;height:26px;}
+  .sched-details[open] .sched-chevron{transform:rotate(180deg);}
+  .sched-body{
+    background:var(--white);
+    border:1.5px solid var(--purple);border-top:none;
+    border-bottom-left-radius:16px;border-bottom-right-radius:16px;
+    padding:32px;
+  }
+
 </style>
 </head>
 <body>
@@ -590,7 +631,7 @@
     <div class="trust-row">
       <div class="trust-stat"><div class="num">5</div><div class="lbl">Classes Included</div></div>
       <div class="trust-stat"><div class="num">$99</div><div class="lbl">Full Starter Price</div></div>
-      <div class="trust-stat"><div class="num">100%</div><div class="lbl">Credited If You Join</div></div>
+      <div class="trust-stat"><div class="num">100%</div><div class="lbl">Credited When You Join</div></div>
       <div class="trust-stat"><div class="num">10</div><div class="lbl">Passes Available</div></div>
     </div>
   </div>
@@ -611,7 +652,7 @@
       </div>
       <div class="how-node">
         <div class="node-circle">3</div>
-        <div class="node-text"><div class="node-title">Decide If You're In</div><div class="node-desc">Love it? Join a membership within 7 days.</div></div>
+        <div class="node-text"><div class="node-title">Join Within 30 Days</div><div class="node-desc">Love it? Join a membership within your first 30 days.</div></div>
       </div>
       <div class="how-node final">
         <div class="node-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -652,6 +693,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
 <section class="showcase-row reverse on-light slide" id="slide-coaching">
@@ -689,13 +731,32 @@
 </section>
 </div>
 
+<section class="sched-section on-light">
+  <div class="wrap">
+    <details class="sched-details">
+      <summary class="sched-summary">
+        <span class="sched-label">View Our Reformer Schedule</span>
+        <span class="sched-chevron">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="sched-body">
+        <!-- Mindbody Schedules widget begin -->
+        <div class="mindbody-widget" data-widget-type="Schedules" data-widget-id="2a44952ba66"></div>
+        <script async src="https://brandedweb.mindbodyonline.com/embed/widget.js"></script>
+        <!-- Mindbody Schedules widget end -->
+      </div>
+    </details>
+  </div>
+</section>
+
 
 <section class="credit-section" id="credit">
   <div class="wrap credit-grid">
     <div class="credit-copy-col">
       <span class="eyebrow">Love Your Experience?</span>
       <h2>Your entire $99 goes toward your first month of membership.</h2>
-      <p class="credit-copy">Join any monthly Reformer membership within 7 days of completing your Starter Pass, and we'll apply <strong>100% of your purchase</strong> toward your first month. You're not paying twice — you're simply trying Reformer before deciding what's right for you.</p>
+      <p class="credit-copy">Join any monthly Reformer membership within 30 days of your Starter Pass purchase, and we'll apply <strong>100% of your $99</strong> toward your first month. You're not paying twice — you're simply trying Reformer before deciding what's right for you.</p>
       <a href="#" class="btn btn-primary">Claim Your Starter Pass</a>
     </div>
     <div class="credit-stat-col">
@@ -703,7 +764,7 @@
       <div class="credit-tag">Membership Credit</div>
       <div class="flow-compact">
         <div class="flow-step"><div class="step-num">1</div><div>Complete your <strong>5-class Starter Pass</strong></div></div>
-        <div class="flow-step"><div class="step-num">2</div><div>Join a membership <strong>within 7 days</strong></div></div>
+        <div class="flow-step"><div class="step-num">2</div><div>Join a membership <strong>within 30 days</strong></div></div>
         <div class="flow-step final"><div class="step-num">✓</div><div>Your $99 pays for itself</div></div>
       </div>
     </div>
@@ -766,15 +827,14 @@
   document.querySelectorAll('.tab-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
       var target = btn.getAttribute('data-target');
-
       document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
       btn.classList.add('active');
-
       document.querySelectorAll('.showcase-row.slide').forEach(function(slide){
         slide.classList.toggle('active', slide.id === target);
       });
     });
   });
+
 </script>
 </body>
 </html>
